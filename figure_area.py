@@ -123,7 +123,7 @@ def get_area_function(parameters: Iterable) -> Callable:
             return area_function
 
 
-def figure_area(*parameters: float) -> float:
+def figure_area(*parameters: float) -> float | None:
     """
     Высчитывате площадь фигуры.
 
@@ -138,7 +138,8 @@ def figure_area(*parameters: float) -> float:
 
     Returns
     -------
-    area : float
+    area : float | None
+        Возвращет None если даны не верные параметры.
     """
     if not parameters:
         return
